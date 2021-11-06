@@ -16,6 +16,7 @@ import java.util.List;
 
 public class Bookadapter extends RecyclerView.Adapter<Bookadapter.MyViewHolder> {
 
+    resultFragment resultFragment ;
     List<Book> books;
     Context context;
     public Bookadapter(List<Book> books, Context context)

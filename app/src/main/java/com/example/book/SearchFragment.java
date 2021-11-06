@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -20,6 +21,7 @@ public class SearchFragment extends Fragment {
     EditText textS;
     String message;
     TextView text;
+    Button btnserach;
 
 
     public SearchFragment() {
@@ -50,10 +52,15 @@ public class SearchFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_search, container, false);
         text = view.findViewById(R.id.textfiltre);
         textS = view.findViewById(R.id.rechercher);
+        btnserach = view.findViewById(R.id.btnrechercher);
         text.setText(String.format("Search using %s", message));
         textS.setText(message);
-        System.out.println(message);
-        return view;
+        btnserach.setOnClickListener(view1 -> {
 
+            String resh =textS.getText().toString();
+            requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.holder, resultFragment.newInstance(message,resh)).commit();
+
+        });
+        return view;
     }
 }

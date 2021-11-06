@@ -14,5 +14,6 @@
     <string name="author">Author</string>
     <string name="next">next</string>
     <string name="textf">choose your filtre</string>
+    <string name="search">search</string>
 
 </resources>

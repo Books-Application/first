@@ -49,9 +49,9 @@ public class HomeActivity extends AppCompatActivity {
     }
     private void setbooks()
         {
-            books.add(new Book( "book1","action",1.0,R.drawable.bg,"omar" ));
-            books.add(new Book( "book2","drama",2.0,R.drawable.bg,"wassim" ));
-            books.add(new Book( "book3","action",1.0,R.drawable.bg,"mahdi" ));
+            books.add(new Book( "book","action",1.0,R.drawable.bg,"omar" ));
+            books.add(new Book( "book","drama",2.0,R.drawable.bg,"wassim" ));
+            books.add(new Book( "book","action",1.0,R.drawable.bg,"mahdi" ));
             books.add(new Book( "book4","drama",2.0,R.drawable.bg,"ahmed" ));
             books.add(new Book( "book5","action",1.0,R.drawable.bg,"firas" ));
             books.add(new Book( "book6","drama",2.0,R.drawable.bg,"salah" ));

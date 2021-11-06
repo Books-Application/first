@@ -12,11 +12,14 @@
         <entry key="..\:/Users/TH3OMAR/AndroidStudioProjects/first-master/app/src/main/res/drawable/a.xml" value="0.2203125" />
         <entry key="..\:/Users/TH3OMAR/AndroidStudioProjects/first-master/app/src/main/res/drawable/b.xml" value="0.2203125" />
         <entry key="..\:/Users/TH3OMAR/AndroidStudioProjects/first-master/app/src/main/res/drawable/yourbuttonbackground.xml" value="0.2203125" />
+        <entry key="..\:/Users/TH3OMAR/AndroidStudioProjects/first-master/app/src/main/res/layout/activity_home.xml" value="0.17798913043478262" />
         <entry key="..\:/Users/TH3OMAR/AndroidStudioProjects/first-master/app/src/main/res/layout/activity_login.xml" value="0.12771739130434784" />
         <entry key="..\:/Users/TH3OMAR/AndroidStudioProjects/first-master/app/src/main/res/layout/activity_search.xml" value="0.1" />
         <entry key="..\:/Users/TH3OMAR/AndroidStudioProjects/first-master/app/src/main/res/layout/activity_sigin.xml" value="0.12771739130434784" />
         <entry key="..\:/Users/TH3OMAR/AndroidStudioProjects/first-master/app/src/main/res/layout/fragment_filter.xml" value="0.25" />
+        <entry key="..\:/Users/TH3OMAR/AndroidStudioProjects/first-master/app/src/main/res/layout/fragment_result.xml" value="0.1140625" />
         <entry key="..\:/Users/TH3OMAR/AndroidStudioProjects/first-master/app/src/main/res/layout/fragment_search.xml" value="0.16614583333333333" />
+        <entry key="..\:/Users/TH3OMAR/AndroidStudioProjects/first-master/app/src/main/res/layout/itembook.xml" value="0.10208333333333333" />
       </map>
     </option>
   </component>
