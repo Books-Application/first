@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="300dp"
+    android:layout_height="450dp"
+    android:layout_gravity="center"
+    tools:context=".SearchFragment">
+    <TextView
+        android:id="@+id/textfiltre"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/textf"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+    <EditText
+        android:id="@+id/rechercher"
+        android:layout_marginTop="150dp"
+        android:layout_marginStart="50dp"
+        android:text="@string/textf"
+        android:inputType="text"
+        android:layout_width="200dp"
+        android:layout_height="40dp"/>
+
+    <Button
+        android:id="@+id/btnrechercher"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="250dp" />
+</FrameLayout>
