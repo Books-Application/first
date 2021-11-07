@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.example.book.entities.Book;
-
 import java.util.ArrayList;
 import java.util.List;
 
