@@ -4,14 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity">
+    tools:context=".FavActivity">
 
-    <FrameLayout
-        android:id="@+id/holder"
-        android:layout_width="400dp"
-        android:layout_height="500dp"
-        tools:ignore="MissingConstraints">
-    </FrameLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="reading now "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/homebtn"
@@ -23,7 +27,7 @@
         android:text="home"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-       />
+        app:layout_constraintTop_toBottomOf="@+id/bookr" />
 
     <Button
         android:id="@+id/Serachbtn"
@@ -35,7 +39,7 @@
         android:text="search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/favbtn"
-       />
+        app:layout_constraintTop_toBottomOf="@+id/bookr" />
 
     <Button
         android:id="@+id/favbtn"
@@ -47,7 +51,14 @@
         android:text="favorite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/homebtn"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/bookr" />
 
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bookr"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

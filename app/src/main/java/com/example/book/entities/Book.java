@@ -1,14 +1,42 @@
 package com.example.book.entities;
 
-import java.util.Date;
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+import java.util.Date;
+@Entity(tableName = "table_Book")
 public class Book {
+    @PrimaryKey(autoGenerate = true)
  private int bookid;
+    @ColumnInfo
  private String nom;
+    @ColumnInfo
  private String categorie;
+    @ColumnInfo
  private double prix;
- private int image ;
+    @ColumnInfo
+    private int image ;
+    @ColumnInfo
  private String auteur;
+    @ColumnInfo
+ private int fav;
+
+    public int getFav() {
+        return fav;
+    }
+
+    public void setFav(int fav) {
+        this.fav = fav;
+    }
+
+    public int getImage() {
+        return image;
+    }
+
+    public void setImage(int image) {
+        this.image = image;
+    }
 
     public int getBookid() {
         return bookid;
@@ -42,13 +70,15 @@ public class Book {
         this.prix = prix;
     }
 
-    public int getImage() {
-        return image;
+    public Book(String nom, String categorie, double prix, String auteur) {
+        this.nom = nom;
+        this.categorie = categorie;
+        this.prix = prix;
+        this.auteur = auteur;
+        fav =0;
     }
 
-    public void setImage(int image) {
-        this.image = image;
-    }
+
 
     public String getAuteur() {
         return auteur;
@@ -58,11 +88,6 @@ public class Book {
         this.auteur = auteur;
     }
 
-    public Book(String nom,  String categorie, double prix, int image, String auteur) {
-        this.nom = nom;
-        this.categorie = categorie;
-        this.prix = prix;
-        this.image = image;
-        this.auteur = auteur;
+
     }
-}
+

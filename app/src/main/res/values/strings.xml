@@ -15,5 +15,6 @@
     <string name="next">next</string>
     <string name="textf">choose your filtre</string>
     <string name="search">search</string>
+    <string name="menu_1">add to favorites</string>
 
 </resources>

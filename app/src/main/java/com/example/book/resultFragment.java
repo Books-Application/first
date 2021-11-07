@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.book.database.MyDataBase;
 import com.example.book.entities.Book;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +24,7 @@ public class resultFragment extends Fragment {
     RecyclerView recyclerView;
     Bookadapter adap;
     List<Book> books = new ArrayList<>();
+    MyDataBase db;
     
 
 
@@ -45,7 +47,7 @@ public class resultFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            setbooks();
+
             message = getArguments().getString("ARG_PARAM1");
             rechercher = getArguments().getString("ARG_PARAM2");
             System.out.println("filter "+message);
@@ -60,6 +62,8 @@ public class resultFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_result, container, false);
         Context context = view.getContext();
+        db = MyDataBase.getDatabase(context);
+        books = db.bookDAO().Getallbook();
         books = recherch(message,rechercher,books);
         recyclerView = view.findViewById(R.id.bookr);
         adap = new Bookadapter(books,context);
@@ -67,21 +71,7 @@ public class resultFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL,false));
        return view ;
     }
-    private void setbooks()
-    {
-        books.add(new Book( "book","action",1.0,R.drawable.bg,"omar" ));
-        books.add(new Book( "book","drama",2.0,R.drawable.bg,"wassim" ));
-        books.add(new Book( "book","action",1.0,R.drawable.bg,"mahdi" ));
-        books.add(new Book( "book4","drama",2.0,R.drawable.bg,"ahmed" ));
-        books.add(new Book( "book5","action",1.0,R.drawable.bg,"firas" ));
-        books.add(new Book( "book6","drama",2.0,R.drawable.bg,"salah" ));
-        books.add(new Book( "book1","action",1.0,R.drawable.bg,"omar" ));
-        books.add(new Book( "book2","drama",2.0,R.drawable.bg,"wassim" ));
-        books.add(new Book( "book3","action",1.0,R.drawable.bg,"mahdi" ));
-        books.add(new Book( "book4","drama",2.0,R.drawable.bg,"ahmed" ));
-        books.add(new Book( "book5","action",1.0,R.drawable.bg,"firas" ));
-        books.add(new Book( "book6","drama",2.0,R.drawable.bg,"salah" ));
-    }
+
 
     private List<Book> recherch(String m,String r,List<Book> books)
     {
