@@ -6,6 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.book.database.MyDataBase;
+import com.example.book.entities.User;
+
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     EditText usernamel;
@@ -23,10 +29,19 @@ public class LoginActivity extends AppCompatActivity {
         Login.setOnClickListener(view -> {
             String username = usernamel.getText().toString();
             String password = passwordl.getText().toString();
-            /* insertion data base */
-            if ((username.equals("user")) && (password.equals("user"))) {
-                Intent intent = new Intent(this, HomeActivity.class);
-                startActivity(intent);
+            MyDataBase db = MyDataBase.getDatabase(this);
+            List<User> u= db.userDAO().GetallUsers();
+            int v =0;
+            for(User r:u) {
+                if ((r.getNom().equals(username)) && (r.getPassword().equals(password))) {
+                    v=1;
+                    Intent intent = new Intent(this, HomeActivity.class);
+                    startActivity(intent);
+                    break;
+                }
+            }
+            if(v ==0) {
+                Toast.makeText(this, " login failed please verify username and password ", Toast.LENGTH_SHORT).show();
             }
         });
         signin.setOnClickListener(view -> {

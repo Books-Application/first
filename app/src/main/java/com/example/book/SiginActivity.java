@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.book.database.MyDataBase;
+import com.example.book.entities.User;
+
 public class SiginActivity extends AppCompatActivity {
     EditText usernamesi;
     EditText emailsi;
@@ -27,16 +30,16 @@ public class SiginActivity extends AppCompatActivity {
             String username = usernamesi.getText().toString();
             String email = emailsi.getText().toString();
             String password = passwordsi.getText().toString();
-
-            /* insertion data base */
-            if (1 == 2) {
-                /*redrection*/
+            if (password.length()> 8) {
+                MyDataBase db = MyDataBase.getDatabase(this);
+                User u = new User(username, password, email);
+                db.userDAO().AddUser(u);
+                Toast.makeText(this, "sign up successfully", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(this, LoginActivity.class);
-                /*pour passe de valeur a next activity*/
-                intent.putExtra("username", username);
                 startActivity(intent);
-            } else {
-                Toast.makeText(this, "sign in faild", Toast.LENGTH_SHORT).show();
+            }else
+             {
+                 Toast.makeText(this, "sign up failed short password length ", Toast.LENGTH_SHORT).show();
             }
 
 
