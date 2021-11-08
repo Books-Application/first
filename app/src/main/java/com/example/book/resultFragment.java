@@ -65,10 +65,12 @@ public class resultFragment extends Fragment {
         db = MyDataBase.getDatabase(context);
         books = db.bookDAO().Getallbook();
         books = recherch(message,rechercher,books);
+        //affecter recycle view a id dans ficher xml
         recyclerView = view.findViewById(R.id.bookr);
         adap = new Bookadapter(books,context);
         recyclerView.setAdapter(adap);
         recyclerView.setLayoutManager(new LinearLayoutManager(context, RecyclerView.VERTICAL,false));
+        requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.holder,this).addToBackStack("fragment").commit();
        return view ;
     }
 

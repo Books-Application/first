@@ -32,6 +32,7 @@ public class SearchFragment extends Fragment {
     public static Fragment newInstance(String selection) {
         SearchFragment fragment = new SearchFragment();
         Bundle args = new Bundle();
+        //recupere le message
         args.putString("filter",selection);
         fragment.setArguments(args);
         return fragment;
@@ -58,7 +59,7 @@ public class SearchFragment extends Fragment {
         btnserach.setOnClickListener(view1 -> {
 
             String resh =textS.getText().toString();
-            requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.holder, resultFragment.newInstance(message,resh)).commit();
+            requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.holder, resultFragment.newInstance(message,resh)).addToBackStack("fragment").commit();
 
         });
         return view;

@@ -53,14 +53,17 @@ public class filterFragment extends Fragment {
             filtre = (RadioGroup) view.findViewById(R.id.filtre);
             String selection = "nothing";
             if (filtre.getCheckedRadioButtonId() != -1) {
+                //get static id of button
                 int id = filtre.getCheckedRadioButtonId();
                 View radioButton = filtre.findViewById(id);
+                //get real id of radio button
                 int radioId = filtre.indexOfChild(radioButton);
                 RadioButton btn = (RadioButton) filtre.getChildAt(radioId);
+                // value of radio button
                 selection = (String) btn.getText();
-                System.out.println(selection);
+               // System.out.println(selection);
             }
-            requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.holder, SearchFragment.newInstance(selection)).commit();
+            requireActivity().getSupportFragmentManager().beginTransaction().replace(R.id.holder, SearchFragment.newInstance(selection)).addToBackStack("fragment").commit();
 
         });
         return view;
